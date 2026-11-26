@@ -196,8 +196,13 @@ main {
 .key-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 50%; margin: 0 0.25rem 0 0.75rem; vertical-align: baseline; }
 .key-dot:first-child { margin-left: 0; }
 
-.legend { list-style: none; margin: 0.75rem 0 0; padding: 0; }
+.legend { list-style: none; margin: 0; padding: 0; }
 .legend li { border-top: 1px solid var(--line); }
+.legend li:first-child { border-top: none; }
+
+.donut-wrap { display: flex; align-items: center; gap: 1.25rem; }
+.donut-wrap .chart-svg { margin: 0; flex: 0 0 auto; }
+.donut-wrap .legend { flex: 1; min-width: 0; }
 .legend a {
   display: flex;
   justify-content: space-between;
@@ -405,6 +410,8 @@ button:hover { background: #e9dfc6; }
   .two-col { gap: 1rem; }
   .add-form { grid-template-columns: 1fr 1fr; }
   .add-form label:nth-child(4) { grid-column: span 2; }
+  .donut-wrap { flex-direction: column; gap: 0.5rem; }
+  .donut-wrap .legend { width: 100%; }
   .tx-row { flex-wrap: wrap; gap: 0.4rem 0.7rem; }
   .tx-main { flex-basis: 55%; }
   .tx-actions { margin-left: auto; }

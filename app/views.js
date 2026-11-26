@@ -92,8 +92,10 @@ export function dashboard() {
   <div class="two-col">
     <section class="card" aria-label="Spending by category">
       <h2>Where the money went</h2>
-      ${donutChart(slices)}
-      <ul class="legend">${legend}</ul>
+      <div class="donut-wrap">
+        ${donutChart(slices, 200)}
+        <ul class="legend">${legend}</ul>
+      </div>
     </section>
     <section class="card" aria-label="Recent transactions">
       <h2>Recent entries</h2>

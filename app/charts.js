@@ -29,7 +29,7 @@ export function donutChart(slices, size = 220) {
   const radius = size / 2 - 14;
   const inner = radius - 30;
   if (total <= 0) {
-    return `<svg viewBox="0 0 ${size} ${size}" role="img" aria-label="No spending yet" class="chart-svg">`
+    return `<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img" aria-label="No spending yet" class="chart-svg">`
       + `<circle cx="${cx}" cy="${cy}" r="${radius}" fill="none" stroke="#e5ddcb" stroke-width="30"/>`
       + `<text x="${cx}" y="${cy}" text-anchor="middle" class="chart-centre">No spending</text></svg>`;
   }
@@ -53,7 +53,7 @@ export function donutChart(slices, size = 220) {
       + `fill="${slice.colour}"><title>${escapeXml(slice.label)}: ${Math.round(share * 100)}%</title></path>`;
     angle += sweep;
   }
-  return `<svg viewBox="0 0 ${size} ${size}" role="img" aria-label="Spending by category" class="chart-svg">`
+  return `<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img" aria-label="Spending by category" class="chart-svg">`
     + paths
     + `<text x="${cx}" y="${cy - 4}" text-anchor="middle" class="chart-centre">Total spent</text>`
     + `<text x="${cx}" y="${cy + 18}" text-anchor="middle" class="chart-centre-amount">¥${total.toLocaleString('en-US')}</text>`
